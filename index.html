@@ -1,0 +1,2108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brainfulness — Ciencia para vivir mejor</title>
+  <meta name="description" content="Brainfulness es el podcast de neurociencia, salud mental y bienestar liderado por dos médicos colombianos. Ciencia de alto valor en lenguaje accesible." />
+  <meta name="keywords" content="neurociencia, salud mental, bienestar, podcast, cerebro, Colombia, Lady Ladino, Juan Gómez Hoyos" />
+  <meta property="og:title" content="Brainfulness — Ciencia para vivir mejor" />
+  <meta property="og:description" content="Dos médicos. Un podcast. Neurociencia, salud mental y bienestar físico con rigor científico y lenguaje humano." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://brainfulness.life" />
+  <meta property="og:image" content="https://brainfulness.life/assets/og-image.png" />
+  <meta property="og:locale" content="es_CO" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Brainfulness — Ciencia para vivir mejor" />
+  <meta name="twitter:description" content="Dos médicos. Un podcast. Neurociencia y bienestar en lenguaje humano." />
+  <meta name="twitter:image" content="https://brainfulness.life/assets/og-image.png" />
+  <link rel="canonical" href="https://brainfulness.life" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --gray-100: #f5f5f7;
+      --gray-200: #e8e8ed;
+      --gray-500: #6e6e73;
+      --gray-800: #1d1d1f;
+      --blue: #4f8ef7;
+      --magenta: #c850c0;
+      --purple: #7b5ea7;
+      --gradient: linear-gradient(135deg, #4f8ef7 0%, #c850c0 50%, #7b5ea7 100%);
+      --gradient-soft: linear-gradient(135deg, rgba(79,142,247,0.08) 0%, rgba(200,80,192,0.08) 50%, rgba(123,94,167,0.08) 100%);
+      --radius: 12px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav-logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gray-800);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--black); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(79,142,247,0.13) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(200,80,192,0.09) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 80% 70%, rgba(123,94,167,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 700;
+      letter-spacing: -3px;
+      line-height: 1.0;
+      color: var(--black);
+      max-width: 900px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: clamp(18px, 2.5vw, 22px);
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.5;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 980px;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--gray-100);
+      color: var(--black);
+    }
+
+    .btn-secondary:hover {
+      background: var(--gray-200);
+      transform: translateY(-1px);
+    }
+
+    .hero-stats {
+      display: flex; align-items: center; gap: 24px;
+      margin-top: 40px; margin-bottom: 8px;
+    }
+    .hero-stat {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .hero-stat-num {
+      font-size: 28px; font-weight: 700; letter-spacing: -1px;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-stat-label {
+      font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gray-500);
+    }
+    .hero-stat-divider {
+      width: 1px; height: 32px; background: var(--gray-200);
+    }
+
+    .hero-scroll-hint {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      text-decoration: none;
+      animation: float 2.5s ease-in-out infinite;
+    }
+    .hero-scroll-text {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .hero-scroll-arrow {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--transition);
+      background: var(--white);
+    }
+    .hero-scroll-hint:hover .hero-scroll-arrow {
+      border-color: var(--purple);
+      box-shadow: 0 4px 16px rgba(123,94,167,0.15);
+      transform: translateY(3px);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      font-size: 13px;
+      color: var(--gray-500);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-scroll::after {
+      content: '';
+      width: 1px;
+      height: 40px;
+      background: var(--gray-200);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 120px 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      color: var(--black);
+      margin-bottom: 24px;
+    }
+
+    .section-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--gray-500);
+      max-width: 560px;
+      line-height: 1.6;
+    }
+
+    /* QUIÉNES SOMOS */
+    #nosotros { background: var(--white); }
+
+    .nosotros-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .profile-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 0 0 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.06);
+      overflow: hidden;
+    }
+
+    .profile-info {
+      padding: 0 32px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .profile-info {
+      width: 100%;
+    }
+
+    .profile-photo-wrap {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      margin: 0 0 28px 0;
+      border-radius: 16px 16px 0 0;
+      overflow: hidden;
+      background: linear-gradient(160deg, #ffffff 0%, #ede8f8 60%, #d8cff5 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .profile-photo {
+      width: 85%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      display: block;
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-photo-ring { display: none; }
+
+    .profile-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gradient-soft);
+      color: var(--purple);
+      padding: 6px 14px;
+      border-radius: 980px;
+      margin-bottom: 8px;
+      border: 1px solid rgba(123,94,167,0.15);
+    }
+
+    .passion-tag {
+      background: rgba(100,210,255,0.08);
+      color: #0099cc;
+      border: 1px solid rgba(100,210,255,0.2);
+    }
+
+    .profile-name {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .profile-role {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--gray-500);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .profile-bio {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray-800);
+      text-align: center;
+    }
+
+    .credenciales-wrap {
+      position: relative;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--gray-100);
+    }
+    .credenciales {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 16px;
+      padding: 8px 4px 16px;
+      scrollbar-width: none;
+      align-items: center;
+    }
+    .credenciales::-webkit-scrollbar { display: none; }
+    .cred-logo {
+      height: 110px;
+      width: auto;
+      max-width: 200px;
+      object-fit: contain;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      opacity: 1;
+      transition: opacity var(--transition);
+    }
+    @media (max-width: 768px) {
+      .cred-logo { height: 80px; max-width: 150px; }
+    }
+    .cred-logo:hover { opacity: 0.75; }
+    .cred-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      z-index: 2;
+    }
+    .cred-arrow-left  { left: -8px; }
+    .cred-arrow-right { right: -8px; }
+
+    /* PODCAST */
+    #podcast { background: #f4f0ff; }
+
+    .podcast-platforms {
+      display: flex;
+      gap: 16px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .platform-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 28px;
+      border-radius: var(--radius);
+      background: var(--gray-100);
+      text-decoration: none;
+      color: var(--black);
+      font-weight: 500;
+      font-size: 15px;
+      transition: all var(--transition);
+      border: 1px solid transparent;
+    }
+
+    .platform-card:nth-child(1):hover {
+      background: rgba(29,185,84,0.08);
+      border-color: rgba(29,185,84,0.2);
+      transform: translateY(-2px);
+    }
+
+    .platform-card:nth-child(2):hover {
+      background: rgba(255,0,0,0.06);
+      border-color: rgba(255,0,0,0.15);
+      transform: translateY(-2px);
+    }
+
+    .platform-card:nth-child(3):hover {
+      background: rgba(153,51,204,0.08);
+      border-color: rgba(153,51,204,0.2);
+      transform: translateY(-2px);
+    }
+
+    /* INSTITUCIONES */
+    .logos-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 48px;
+      margin-top: 36px;
+      padding: 16px 8px 24px;
+      scrollbar-width: none;
+    }
+    .logos-grid::-webkit-scrollbar { display: none; }
+    .logo-inst {
+      height: 168px;
+      width: auto;
+      max-width: 336px;
+      object-fit: contain;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      transition: opacity var(--transition);
+      opacity: 0.85;
+    }
+    .logo-inst.logo-wide {
+      height: 78px;
+      max-width: 286px;
+    }
+    .logo-inst:hover { opacity: 1; }
+
+    .logo-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      transition: box-shadow var(--transition), background var(--transition);
+      z-index: 2;
+    }
+    .logo-arrow:hover { background: var(--gray-100); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+    .logo-arrow-left  { left: 8px; }
+    .logo-arrow-right { right: 8px; }
+
+    /* HERO MÉTRICAS */
+    .hero-metricas {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      background: linear-gradient(135deg, #0d0820 0%, #1a0e35 50%, #0d1525 100%);
+      border-radius: 20px;
+      padding: 28px 40px;
+      margin-top: 40px;
+      width: 100%;
+      max-width: 760px;
+      flex-wrap: wrap;
+    }
+    .hero-metrica-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 28px;
+    }
+    .hero-metrica-num {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .hero-metrica-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 6px;
+    }
+    .hero-metrica-div {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.12);
+    }
+    @media (max-width: 600px) {
+      .hero-metrica-div { display: none; }
+      .hero-metrica-item { padding: 12px 20px; }
+    }
+
+    /* MÉTRICAS */
+    .metricas-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .metrica-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 40px;
+    }
+    .metrica-num {
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -2px;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .metrica-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 8px;
+    }
+    .metrica-divider {
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.12);
+    }
+    @media (max-width: 768px) {
+      .metrica-item { padding: 24px 32px; }
+      .metrica-divider { display: none; }
+    }
+
+    /* TESTIMONIOS */
+    .testimonios-grid {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 20px;
+      margin-top: 40px;
+      padding: 8px 4px 24px;
+      scrollbar-width: none;
+    }
+    .testimonios-grid::-webkit-scrollbar { display: none; }
+    .testimonio-card {
+      background: var(--gray-100);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: transform var(--transition);
+      flex: 0 0 340px;
+      scroll-snap-align: start;
+    }
+    .testimonio-card:hover { transform: translateY(-4px); }
+    .testimonio-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--gray-800);
+      font-style: italic;
+      flex: 1;
+    }
+    .testimonio-autor {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .testimonio-estrella {
+      color: #f5a623;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+    .testimonio-nombre {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-500);
+    }
+    @media (max-width: 768px) {
+      .testimonios-grid { grid-template-columns: 1fr; }
+    }
+
+    /* EPISODIO ESTRELLA */
+    .episodio-estrella {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+      align-items: center;
+      margin-top: 56px;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    }
+    .episodio-estrella-label {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .episodio-estrella-title {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--black);
+    }
+    .episodio-estrella-desc {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--gray-500);
+    }
+    @media (max-width: 768px) {
+      .episodio-estrella { grid-template-columns: 1fr; padding: 28px; }
+    }
+
+    /* PODCAST videos */
+    .video-skeleton {
+      background: linear-gradient(90deg, var(--gray-100) 25%, var(--gray-200) 50%, var(--gray-100) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+      margin-bottom: 48px;
+    }
+
+    .video-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .videos-grid { grid-template-columns: 1fr; }
+    }
+
+    .video-cta {
+      margin-top: 0;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--black);
+    }
+
+    .btn-white:hover {
+      background: var(--gray-100);
+      transform: translateY(-1px);
+    }
+
+    /* TECNOLOGÍA */
+    #tecnologia { background: #0d0d14; color: var(--white); }
+    #tecnologia .section-title { color: var(--white); }
+    #tecnologia .section-sub { color: rgba(255,255,255,0.45); }
+
+    .tech-teaser {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 56px;
+    }
+    .tech-teaser-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius); padding: 40px 36px;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: all var(--transition);
+    }
+    .tech-teaser-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+    .tech-teaser-icon { font-size: 36px; }
+    .tech-teaser-title {
+      font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--white);
+    }
+    .tech-teaser-desc {
+      font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.5); flex: 1;
+    }
+    .tech-teaser-badge {
+      display: inline-block; width: fit-content;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    @media (max-width: 768px) {
+      .tech-teaser { grid-template-columns: 1fr; }
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .tech-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all var(--transition);
+    }
+
+    .tech-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.16);
+      transform: translateY(-4px);
+    }
+
+    .tech-logo-wrap {
+      margin-bottom: 8px;
+    }
+
+    .tech-badge {
+      display: inline-block;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--gradient-soft); color: var(--purple);
+      border: 1px solid rgba(123,94,167,0.25);
+      padding: 4px 12px; border-radius: 980px;
+      width: fit-content;
+    }
+
+    .tech-name {
+      font-size: 36px; font-weight: 700; letter-spacing: -1.5px;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .tech-tagline {
+      font-size: 15px; color: rgba(255,255,255,0.55); font-weight: 400;
+      margin-top: -4px;
+    }
+
+    .tech-desc {
+      font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.7);
+      margin-top: 4px;
+    }
+
+    .tech-features {
+      display: flex; flex-direction: column; gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tech-feat {
+      font-size: 13px; color: rgba(255,255,255,0.45);
+    }
+
+    .tech-cta {
+      display: inline-flex; align-items: center;
+      margin-top: 12px;
+      font-size: 14px; font-weight: 600;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-decoration: none;
+      transition: opacity var(--transition);
+    }
+
+    .tech-cta:hover { opacity: 0.75; }
+
+    @media (max-width: 768px) {
+      .tech-grid { grid-template-columns: 1fr; }
+    }
+
+    /* CONFERENCIAS */
+    #conferencias { background: #0d0d14; color: var(--white); }
+    #conferencias .section-title { color: var(--white); }
+    #conferencias .section-label { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    #conferencias .section-sub { color: rgba(255,255,255,0.5); }
+
+    .conferencias-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .conf-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: all var(--transition);
+    }
+
+    .conf-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .conf-number {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+
+    .conf-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      color: var(--white);
+    }
+
+    .conf-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+    }
+
+    /* FORMULARIO / WHATSAPP CTA */
+    .contact-form-wrap {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 52px 48px;
+      max-width: 720px;
+      margin-top: 0;
+    }
+
+    .contact-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .contact-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 36px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .form-row .form-group {
+      margin-bottom: 0;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-800);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 16px;
+      border: 1px solid var(--gray-200);
+      border-radius: 10px;
+      font-size: 15px;
+      font-family: inherit;
+      color: var(--black);
+      background: var(--white);
+      transition: border-color var(--transition);
+      outline: none;
+      resize: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(123,94,167,0.1);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #b0b0b5;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form-wrap { padding: 32px 24px; }
+    }
+
+    /* CURSOS */
+    #cursos { background: var(--gray-100); }
+
+    .cursos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .curso-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      transition: all var(--transition);
+    }
+
+    .curso-card:hover {
+      border-color: var(--black);
+      transform: translateY(-4px);
+    }
+
+    .curso-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gradient);
+      color: var(--white);
+      padding: 4px 12px;
+      border-radius: 980px;
+      margin-bottom: 20px;
+    }
+
+    .curso-badge.soon {
+      background: var(--gray-200);
+      color: var(--gray-500);
+    }
+
+    .curso-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .curso-desc {
+      font-size: 14px;
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* SUBSTACK */
+    #substack { background: var(--white); }
+
+    .substack-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .substack-features {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .feature-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .feature-text strong {
+      display: block;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .feature-text span {
+      font-size: 14px;
+      color: var(--gray-500);
+    }
+
+    .substack-cta-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 48px 40px;
+      text-align: center;
+    }
+
+    .substack-cta-box p {
+      font-size: 15px;
+      color: var(--gray-500);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    /* TIENDA */
+    #tienda { background: linear-gradient(135deg, #0f0a1e 0%, #1a0520 50%, #0a0f1e 100%); color: var(--white); }
+
+    #tienda .section-title { color: var(--white); }
+    #tienda .section-label { color: rgba(255,255,255,0.4); }
+    #tienda .section-sub { color: rgba(255,255,255,0.5); }
+
+    .tienda-categorias {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 56px;
+    }
+
+    .tienda-cat {
+      display: flex; flex-direction: column; gap: 12px;
+      padding: 36px 32px;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+
+    .tienda-cat:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-3px);
+    }
+
+    .tienda-cat-icon { font-size: 32px; line-height: 1; }
+
+    .tienda-cat-title {
+      font-size: 20px; font-weight: 700; letter-spacing: -0.3px; color: var(--white);
+    }
+
+    .tienda-cat-desc {
+      font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.45); flex: 1;
+    }
+
+    .tienda-cat-badge {
+      display: inline-block; width: fit-content;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    @media (max-width: 768px) {
+      .tienda-categorias { grid-template-columns: 1fr; }
+    }
+
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .merch-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all var(--transition);
+    }
+
+    .merch-card:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-4px);
+    }
+
+    .merch-preview {
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .merch-svg {
+      width: 160px;
+      height: 160px;
+    }
+
+    .merch-info {
+      padding: 24px 28px 28px;
+    }
+
+    .merch-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .merch-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 8px;
+      letter-spacing: -0.2px;
+    }
+
+    .merch-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .merch-price {
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (max-width: 768px) {
+      .merch-grid { grid-template-columns: 1fr; }
+    }
+
+    /* SOCIAL BAR */
+    .social-bar {
+      background: var(--black);
+      padding: 20px 48px;
+      position: sticky;
+      bottom: 0;
+      z-index: 50;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .social-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .social-bar-label {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.06);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+
+    .social-link--spotify:hover { color: #1DB954 !important; background: rgba(29,185,84,0.12) !important; }
+    .social-link--substack:hover { color: #FF6719 !important; background: rgba(255,103,25,0.12) !important; }
+
+    .social-link:hover {
+      color: var(--white);
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-2px);
+    }
+
+    .social-link:nth-child(1):hover { background: rgba(255,0,0,0.2); color: #ff4444; }
+    .social-link:nth-child(2):hover { background: rgba(200,80,192,0.2); color: #c850c0; }
+    .social-link:nth-child(3):hover { background: rgba(255,102,0,0.2); color: #ff6600; }
+    .social-link:nth-child(4):hover { background: rgba(255,255,255,0.15); color: var(--white); }
+    .social-link:nth-child(5):hover { background: rgba(0,119,181,0.2); color: #0077b5; }
+
+    /* FOOTER */
+    footer {
+      background: var(--gray-100);
+      padding: 64px 48px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 64px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: var(--gray-500);
+      margin-top: 16px;
+      max-width: 280px;
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: var(--gray-500);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    .footer-col a:hover { color: var(--black); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--gray-500);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .nosotros-grid { grid-template-columns: 1fr; }
+      .substack-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      section { padding: 60px 20px; }
+
+      /* Hero mobile */
+      .hero { padding: 100px 20px 60px; }
+      .hero-title { font-size: clamp(36px, 10vw, 56px); }
+      .hero-metricas { padding: 20px 16px; gap: 8px; flex-wrap: wrap; }
+      .hero-metrica-item { padding: 0 12px; }
+      .hero-metrica-div { display: none; }
+
+      /* Nosotros mobile */
+      .nosotros-grid { grid-template-columns: 1fr; gap: 24px; }
+      .profile-photo-wrap { height: 300px; }
+
+      /* Episodio estrella mobile */
+      .episodio-estrella { grid-template-columns: 1fr; padding: 28px 20px; gap: 24px; }
+
+      /* Conferencias mobile */
+      .conferencias-grid { grid-template-columns: 1fr; }
+
+      /* Cursos mobile */
+      .cursos-grid { grid-template-columns: 1fr; }
+
+      /* Testimonios mobile — ya es scroll horizontal */
+
+      /* Logos instituciones mobile */
+      #instituciones .logo-arrow { display: none; } /* instituciones: swipe natural en mobile */
+
+      /* Metricas mobile */
+      .metricas-grid { gap: 24px; flex-wrap: wrap; justify-content: center; }
+      .metrica-divider { display: none; }
+      .metrica-item { padding: 0 24px; }
+
+      /* Footer mobile */
+      .social-bar { gap: 16px; }
+    }
+
+    /* CONFERENCIA A LA MEDIDA */
+    .conferencia-medida {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 48px;
+      background: linear-gradient(135deg, rgba(79,142,247,0.06) 0%, rgba(123,94,167,0.06) 100%);
+      border: 1px solid rgba(79,142,247,0.15);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+    .conf-feature {
+      font-size: 14px;
+      color: var(--gray-800);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      line-height: 1.4;
+    }
+    .conf-feature:last-child { border-bottom: none; }
+    @media (max-width: 768px) {
+      .conferencia-medida { grid-template-columns: 1fr; padding: 28px 20px; }
+    }
+
+    /* Extra small (iPhone SE) */
+    @media (max-width: 390px) {
+      .hero-title { font-size: 32px; }
+      .hero-metricas { padding: 16px 12px; }
+      .hero-metrica-num { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Brainfulness</a>
+    <ul class="nav-links">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#podcast">Podcast</a></li>
+      <li><a href="#conferencias">Conferencias</a></li>
+      <li><a href="#cursos">Cursos</a></li>
+      <li><a href="#articulos">Artículos</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="https://wa.me/573016601930" target="_blank">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Educación · Investigación · Tecnología</p>
+    <h1>Ciencia para<br/><em>vivir mejor.</em></h1>
+    <p class="hero-desc">Podcast, cursos, conferencias y tecnología: todo lo que necesitas para cuidar tu mente y tu cuerpo.</p>
+
+
+    <div class="hero-metricas">
+      <div class="hero-metrica-item">
+        <span class="hero-metrica-num">+600K</span>
+        <span class="hero-metrica-label">Reproducciones</span>
+      </div>
+      <div class="hero-metrica-div"></div>
+      <div class="hero-metrica-item">
+        <span class="hero-metrica-num">+60</span>
+        <span class="hero-metrica-label">Episodios</span>
+      </div>
+      <div class="hero-metrica-div"></div>
+      <div class="hero-metrica-item">
+        <span class="hero-metrica-num">108</span>
+        <span class="hero-metrica-label">Países</span>
+      </div>
+      <div class="hero-metrica-div"></div>
+      <div class="hero-metrica-item">
+        <span class="hero-metrica-num">+5.000</span>
+        <span class="hero-metrica-label">Asistentes a conferencias</span>
+      </div>
+    </div>
+
+    <div style="width:100%; display:flex; justify-content:center; margin-top:24px;">
+    <a href="#nosotros" class="hero-scroll-hint">
+      <span class="hero-scroll-text">Descubre más</span>
+      <div class="hero-scroll-arrow">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4 L10 16 M4 10 L10 16 L16 10" stroke="url(#arrowGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="arrowGrad" x1="0" y1="0" x2="20" y2="20" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#4f8ef7"/>
+              <stop offset="100%" stop-color="#c850c0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </a>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section id="nosotros">
+    <div class="container">
+      <p class="section-label">El equipo</p>
+      <h2 class="section-title">Dos médicos.<br/>Un propósito.</h2>
+      <p class="section-sub">Llevamos años estudiando el cerebro y el cuerpo humano desde ángulos distintos. Juntos traducimos esa ciencia en algo que cualquier persona puede comprender y usar.</p>
+
+      <div class="nosotros-grid">
+        <div class="profile-card">
+          <div class="profile-photo-wrap">
+            <img src="assets/lady.png" alt="Dra. Lady Ladino" class="profile-photo" style="object-position: 70% 10%;" />
+            <div class="profile-photo-ring"></div>
+          </div>
+          <div class="profile-info">
+            <span class="profile-tag">Experta en neurociencias del bienestar</span>
+            <span class="profile-tag passion-tag">Pasión: educación a la comunidad</span>
+            <h3 class="profile-name">Dra. Lady Ladino</h3>
+            <p class="profile-role">Neuróloga Clínica · Investigadora · Conferencista · Docente</p>
+            <p class="profile-bio">Lleva más de una década estudiando el cerebro humano buscando patrones y encontrando soluciones desde adentro. Meticulosa en la evidencia, apasionada por comunicar ideas complejas de manera sencilla y comprensible.</p>
+            <div class="credenciales-wrap">
+              <button class="cred-arrow cred-arrow-left" onclick="document.getElementById('credLady').scrollBy({left:-200,behavior:'smooth'})">&#8592;</button>
+              <div class="credenciales" id="credLady">
+                <img src="assets/credenciales/lady/javeriana.png"    alt="Javeriana"              class="cred-logo">
+                <img src="assets/credenciales/lady/udea_lady.png"    alt="UdeA"                   class="cred-logo">
+                <img src="assets/credenciales/lady/saskatchewan.png" alt="Saskatchewan"           class="cred-logo">
+                <img src="assets/credenciales/lady/ruh.png"          alt="RUH Foundation"         class="cred-logo">
+                <img src="assets/credenciales/lady/aes.png"          alt="AES"                    class="cred-logo">
+                <img src="assets/credenciales/lady/cleveland.png"    alt="Cleveland Clinic"       class="cred-logo">
+                <img src="assets/credenciales/lady/ilae.png"         alt="ILAE"                   class="cred-logo">
+                <img src="assets/credenciales/lady/venice.png"       alt="Venice International U" class="cred-logo">
+              </div>
+              <button class="cred-arrow cred-arrow-right" onclick="document.getElementById('credLady').scrollBy({left:200,behavior:'smooth'})">&#8594;</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-photo-wrap">
+            <img src="assets/juan.png" alt="Dr. Juan Gómez Hoyos" class="profile-photo" />
+            <div class="profile-photo-ring"></div>
+          </div>
+          <div class="profile-info">
+            <span class="profile-tag">Experto en salud física osteomuscular</span>
+            <span class="profile-tag passion-tag">Pasión: aplicaciones tecnológicas de bienestar</span>
+            <h3 class="profile-name">Dr. Juan Gómez Hoyos</h3>
+            <p class="profile-role">Cirujano Ortopedista · Editor Profesional · Investigador · Docente</p>
+            <p class="profile-bio">Lleva años en el quirófano reparando estructuras y entendiendo que la medicina no es una cirugía: los pacientes y sus estilos de vida deben abordarse integralmente. Hoy construye herramientas tecnológicas para que la ciencia llegue a todos.</p>
+            <div class="credenciales-wrap">
+              <button class="cred-arrow cred-arrow-left" onclick="document.getElementById('credJuan').scrollBy({left:-200,behavior:'smooth'})">&#8592;</button>
+              <div class="credenciales" id="credJuan">
+                <img src="assets/credenciales/juan/udea.png"     alt="UdeA"      class="cred-logo">
+                <img src="assets/credenciales/juan/baylor.png"   alt="Baylor"    class="cred-logo">
+                <img src="assets/credenciales/juan/rush.png"     alt="RUSH"      class="cred-logo">
+                <img src="assets/credenciales/juan/ocm.png"      alt="OCM"       class="cred-logo">
+                <img src="assets/credenciales/juan/luzerner.png" alt="Luzerner"  class="cred-logo">
+                <img src="assets/credenciales/juan/nhs.png"      alt="NHS"       class="cred-logo">
+                <img src="assets/credenciales/juan/isha.png"     alt="ISHA"      class="cred-logo">
+                <img src="assets/credenciales/juan/ufv.png"      alt="UFV"       class="cred-logo">
+              </div>
+              <button class="cred-arrow cred-arrow-right" onclick="document.getElementById('credJuan').scrollBy({left:200,behavior:'smooth'})">&#8594;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTITUCIONES -->
+  <section id="instituciones" style="background: var(--gray-100); padding: 56px 24px; position: relative;">
+    <div class="container">
+      <p class="section-label" style="text-align:center;">Han confiado en nosotros</p>
+      <div class="logos-grid" id="logosGrid">
+        <img src="assets/logos/medellin.png"   alt="Alcaldía de Medellín"     class="logo-inst">
+        <img src="assets/logos/udea.png"       alt="Universidad de Antioquia" class="logo-inst">
+        <img src="assets/logos/ces.png"        alt="Universidad CES"          class="logo-inst">
+        <img src="assets/logos/televid.png"    alt="Televid"                  class="logo-inst">
+        <img src="assets/logos/venecia.png"    alt="Gobierno de Venecia"      class="logo-inst">
+        <img src="assets/logos/biuman.png"     alt="Biuman"                   class="logo-inst">
+        <img src="assets/logos/blood.png"      alt="Blood Dance Company"      class="logo-inst">
+        <img src="assets/logos/fla.png"        alt="Fábrica de Licores"       class="logo-inst">
+        <img src="assets/logos/theodoro.png"   alt="Colegio Theodoro Hertzl"  class="logo-inst">
+        <img src="assets/logos/comunife.png"   alt="Comunife"                 class="logo-inst">
+      </div>
+      <button class="logo-arrow logo-arrow-left" onclick="document.getElementById('logosGrid').scrollBy({left:-300,behavior:'smooth'})">&#8592;</button>
+      <button class="logo-arrow logo-arrow-right" onclick="document.getElementById('logosGrid').scrollBy({left:300,behavior:'smooth'})">&#8594;</button>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios" style="background: var(--white); padding: 40px 24px;">
+    <div class="container">
+      <p class="section-label">Lo que dicen los oyentes</p>
+      <div style="position:relative;">
+        <div class="testimonios-grid" id="testimoniosGrid">
+
+          <div class="testimonio-card">
+            <p class="testimonio-text">"ESPECTACULAR. Soy psicólogo y esto que dicen confirma todo lo visto en terapias. Por favor sigan adelante."</p>
+            <div class="testimonio-autor"><span class="testimonio-estrella">★★★★★</span></div>
+          </div>
+
+          <div class="testimonio-card">
+            <p class="testimonio-text">"Los felicito por su podcast y la forma como soportan con evidencia todo lo que afirman. Nos permiten aprender cada día."</p>
+            <div class="testimonio-autor"><span class="testimonio-estrella">★★★★★</span></div>
+          </div>
+
+          <div class="testimonio-card">
+            <p class="testimonio-text">"La dedicación y la pasión por el saber y ayudar se nota en cada episodio. He aprendido mucho y los comparto con mi familia."</p>
+            <div class="testimonio-autor"><span class="testimonio-estrella">★★★★★</span></div>
+          </div>
+
+          <div class="testimonio-card">
+            <p class="testimonio-text">"Este capítulo lo he repetido varias veces y le sigo sacando provecho. Gracias por tener ese lenguaje tan sencillo para que podamos entender la ciencia."</p>
+            <div class="testimonio-autor"><span class="testimonio-estrella">★★★★★</span></div>
+          </div>
+
+          <div class="testimonio-card">
+            <p class="testimonio-text">"Transforman vidas a través de estas plataformas. Sus dones dados por Dios para el servicio de otros. Gracias, me retan y me han enseñado."</p>
+            <div class="testimonio-autor"><span class="testimonio-estrella">★★★★★</span></div>
+          </div>
+
+        </div>
+        <button class="logo-arrow logo-arrow-left" onclick="document.getElementById('testimoniosGrid').scrollBy({left:-400,behavior:'smooth'})">&#8592;</button>
+        <button class="logo-arrow logo-arrow-right" onclick="document.getElementById('testimoniosGrid').scrollBy({left:400,behavior:'smooth'})">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section id="podcast">
+    <div class="container">
+      <p class="section-label">Podcast</p>
+      <h2 class="section-title">Ciencia que te acompaña<br/>en todo momento.</h2>
+      <p class="section-sub">Neurociencia real, historias que no olvidarás y herramientas concretas. Más de 60 episodios disponibles en todas las plataformas.</p>
+
+      <div class="podcast-platforms">
+        <a href="https://open.spotify.com/show/0WYfp9qzi5o4Ssf7PoD3We" target="_blank" class="platform-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Spotify
+        </a>
+        <a href="https://www.youtube.com/@brainfulness" target="_blank" class="platform-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+          YouTube
+        </a>
+        <a href="https://podcasts.apple.com/us/podcast/brainfulness/id1742833508" target="_blank" class="platform-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#9933CC"><path d="M5.34 0A5.328 5.328 0 0 0 0 5.34v13.32A5.328 5.328 0 0 0 5.34 24h13.32A5.328 5.328 0 0 0 24 18.66V5.34A5.328 5.328 0 0 0 18.66 0zm6.007 3.8c2.754 0 5.223 1.14 7.02 2.98a9.833 9.833 0 0 1 2.894 6.993c0 2.716-1.092 5.23-2.894 7.02a9.903 9.903 0 0 1-7.02 2.893 9.903 9.903 0 0 1-7.02-2.894A9.833 9.833 0 0 1 2.233 13.8c0-2.715 1.092-5.228 2.894-7.02A9.947 9.947 0 0 1 11.347 3.8zm.006 1.714a8.16 8.16 0 0 0-5.835 2.422 8.16 8.16 0 0 0-2.421 5.835c0 2.274.92 4.33 2.421 5.834a8.16 8.16 0 0 0 5.835 2.422 8.16 8.16 0 0 0 5.835-2.422 8.16 8.16 0 0 0 2.421-5.834 8.16 8.16 0 0 0-2.421-5.835 8.16 8.16 0 0 0-5.835-2.422zm0 2.262c1.714 0 3.25.643 4.413 1.685.267.244.267.634 0 .878L14.7 11.41a.534.534 0 0 1-.756-.067 2.962 2.962 0 0 0-2.591-1.042 2.98 2.98 0 0 0-2.59 1.042.534.534 0 0 1-.757.067L6.941 10.34a.622.622 0 0 1 0-.878 6.416 6.416 0 0 1 4.412-1.685zm0 3.604c.979 0 1.793.601 2.125 1.456a.32.32 0 0 1-.067.355l-1.97 1.97a.32.32 0 0 1-.533-.178 1.087 1.087 0 0 0-.978-.622 1.08 1.08 0 0 0-.978.622.32.32 0 0 1-.533.178l-1.97-1.97a.32.32 0 0 1-.067-.355 2.267 2.267 0 0 1 2.125-1.456zm0 3.427c.667 0 1.202.512 1.202 1.157s-.535 1.157-1.202 1.157-1.202-.512-1.202-1.157.535-1.157 1.202-1.157z"/></svg>
+          Apple Podcasts
+        </a>
+      </div>
+
+      <div class="episodio-estrella">
+        <div class="episodio-estrella-text">
+          <span class="episodio-estrella-label">⭐ Si solo escuchas uno, que sea este</span>
+          <h3 class="episodio-estrella-title">DESCANSO: ¿Por qué nos sentimos culpables?</h3>
+          <p class="episodio-estrella-desc">Uno de los episodios más escuchados de Brainfulness. La neurociencia detrás del descanso, una necesidad biológica, no un lujo.</p>
+        </div>
+        <div class="episodio-estrella-video">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/jCT0S7TdTcs?enablejsapi=1" title="DESCANSO: ¿Por qué nos sentimos culpables?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px; text-align: center;">
+        <a href="https://www.youtube.com/@brainfulness" target="_blank" class="btn btn-secondary">Ver todos los episodios →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFERENCIAS -->
+  <section id="conferencias">
+    <div class="container">
+      <p class="section-label">Conferencias Corporativas</p>
+      <h2 class="section-title">Ciencia que<br/>transforma equipos.</h2>
+      <p class="section-sub">Conferencias y talleres diseñados para empresas que entienden que el bienestar de sus equipos es estratégico.</p>
+
+      <div class="conferencias-grid">
+        <div class="conf-card">
+          <p class="conf-number">01</p>
+          <h3 class="conf-title">Sueño y productividad</h3>
+          <p class="conf-desc">La variable más subestimada del rendimiento laboral. Qué le hace la privación de sueño a un equipo — y cómo revertirlo con ciencia.</p>
+        </div>
+
+        <div class="conf-card">
+          <p class="conf-number">02</p>
+          <h3 class="conf-title">El cerebro que lidera</h3>
+          <p class="conf-desc">Neurociencia aplicada al liderazgo. Cómo tomar mejores decisiones, gestionar el estrés y construir equipos de alto rendimiento desde la biología.</p>
+        </div>
+
+        <div class="conf-card">
+          <p class="conf-number">03</p>
+          <h3 class="conf-title">Salud mental en el trabajo</h3>
+          <p class="conf-desc">Estrés, burnout y ansiedad desde la neurobiología. Herramientas concretas para líderes y equipos que quieren resultados sostenibles.</p>
+        </div>
+
+        <div class="conf-card">
+          <p class="conf-number">04</p>
+          <h3 class="conf-title">El arte de los hábitos</h3>
+          <p class="conf-desc">Por qué el cambio de comportamiento falla y cómo la neurociencia resuelve lo que la fuerza de voluntad no puede. Para equipos que quieren transformación real.</p>
+        </div>
+
+        <div class="conf-card">
+          <p class="conf-number">05</p>
+          <h3 class="conf-title">Longevidad y bienestar integral</h3>
+          <p class="conf-desc">Los pilares científicos de una vida más larga y plena: sueño, movimiento, nutrición, relaciones y propósito. La conferencia más completa de Brainfulness.</p>
+        </div>
+
+        <div class="conf-card">
+          <p class="conf-number">06</p>
+          <h3 class="conf-title">Inteligencia emocional aplicada</h3>
+          <p class="conf-desc">Qué ocurre en el cerebro durante las situaciones difíciles y cómo desarrollar la regulación emocional que los equipos de alto rendimiento necesitan.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 64px; text-align: center;">
+        <div class="contact-form-wrap" style="max-width: 680px; margin: 0 auto; text-align: center; padding: 36px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap;">
+          <div style="text-align: left; flex: 1; min-width: 240px;">
+            <h3 class="contact-title" style="font-size: 22px; margin-bottom: 8px;">¿Tu empresa necesita esto?</h3>
+            <p class="contact-sub" style="margin-bottom: 0; font-size: 14px;">Escríbenos y te respondemos en menos de 24 horas.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 10px; flex-shrink: 0;">
+            <a href="https://wa.me/573016601930?text=Hola%2C%20me%20interesa%20una%20conferencia%20de%20Brainfulness%20para%20mi%20empresa." target="_blank" class="btn btn-primary" style="white-space: nowrap;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+              WhatsApp Corporativo
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CONFERENCIAS A LA MEDIDA -->
+      <div class="conferencia-medida">
+        <div class="conferencia-medida-text">
+          <span class="curso-badge" style="background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);">Disponible ahora</span>
+          <h3 style="font-size:22px;font-weight:700;color:#fff;margin-top:12px;">Conferencias y talleres a la medida</h3>
+          <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.6;margin-top:8px;">¿Tienes un evento, congreso o empresa con necesidades específicas? Diseñamos una conferencia o taller personalizado basado en la ciencia del bienestar, adaptado a tu audiencia y objetivos.</p>
+          <a href="https://wa.me/573016601930?text=Hola%2C%20me%20interesa%20una%20conferencia%20a%20la%20medida%20de%20Brainfulness." target="_blank" class="btn" style="margin-top:20px;width:fit-content;background:#fff;color:#0d0d14;font-weight:600;">Solicitar cotización →</a>
+        </div>
+        <div class="conferencia-medida-features">
+          <div class="conf-feature" style="color:rgba(255,255,255,0.85);border-bottom-color:rgba(255,255,255,0.1);">🎯 Tema adaptado a tu audiencia</div>
+          <div class="conf-feature" style="color:rgba(255,255,255,0.85);border-bottom-color:rgba(255,255,255,0.1);">📍 Presencial o virtual</div>
+          <div class="conf-feature" style="color:rgba(255,255,255,0.85);border-bottom-color:rgba(255,255,255,0.1);">⏱️ 45 min · 90 min · Taller de día completo</div>
+          <div class="conf-feature" style="color:rgba(255,255,255,0.85);border-bottom-color:transparent;">🏥 Clínicas, empresas, universidades y congresos</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- CURSOS -->
+  <section id="cursos">
+    <div class="container">
+      <p class="section-label">Cursos</p>
+      <h2 class="section-title">Aprende a tu<br/>propio ritmo.</h2>
+      <p class="section-sub">Programas estructurados para llevar la ciencia del bienestar a tu vida de forma sistemática y con profundidad real.</p>
+
+      <div class="cursos-grid">
+        <div class="curso-card">
+          <span class="curso-badge soon">En desarrollo</span>
+          <h3 class="curso-title">Domina tu sueño</h3>
+          <p class="curso-desc">El curso más completo en español sobre cronobiología y optimización del sueño. Diseñado por la Dra. Lady Ladino con la evidencia científica más reciente.</p>
+        </div>
+
+        <div class="curso-card">
+          <span class="curso-badge soon">Próximamente</span>
+          <h3 class="curso-title">El método Brainfulness</h3>
+          <p class="curso-desc">8 semanas para transformar tu mente. Neurociencia, hábitos, sueño, relaciones y propósito — integrados en un sistema que funciona.</p>
+        </div>
+
+        <div class="curso-card">
+          <span class="curso-badge soon">Próximamente</span>
+          <h3 class="curso-title">Cerebro antifrágil</h3>
+          <p class="curso-desc">Cómo construir un cerebro que mejora bajo presión. Neuroplasticidad, resiliencia y rendimiento cognitivo con base científica.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px;">
+        <a href="https://www.whatsapp.com/channel/0029Vb7psVR1iUxdmow6av3a" target="_blank" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="margin-right:8px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Únete al canal de WhatsApp para ser el primero en saber
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECNOLOGÍA (oculta hasta el lanzamiento) -->
+  <section id="tecnologia" style="display:none;">
+    <div class="container">
+      <p class="section-label">Tecnología</p>
+      <h2 class="section-title">La ciencia no debería<br/>quedarse en el paper.</h2>
+      <p class="section-sub">Estamos construyendo herramientas digitales para llevar el conocimiento de Brainfulness a la práctica clínica y a la vida diaria. Para médicos que quieren documentar mejor. Para personas que quieren vivir mejor.</p>
+
+      <div class="tech-teaser">
+        <div class="tech-teaser-card">
+          <div class="tech-teaser-icon">🩺</div>
+          <h3 class="tech-teaser-title">Para profesionales de la salud</h3>
+          <p class="tech-teaser-desc">Una herramienta diseñada por médicos para médicos. Pensada para que la tecnología desaparezca en la consulta y lo que quede sea la relación con el paciente.</p>
+          <span class="tech-teaser-badge">En desarrollo</span>
+        </div>
+
+        <div class="tech-teaser-card">
+          <div class="tech-teaser-icon">🌙</div>
+          <h3 class="tech-teaser-title">Para quienes quieren optimizar su salud</h3>
+          <p class="tech-teaser-desc">Una aplicación que convierte los datos de tus wearables en recomendaciones personalizadas con base científica. Porque los números sin interpretación no sirven de nada.</p>
+          <span class="tech-teaser-badge">En desarrollo</span>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px; text-align:center;">
+        <p style="font-size:14px; color:var(--gray-500); margin-bottom:20px;">Suscríbete al newsletter para ser de los primeros en acceder.</p>
+        <a href="#articulos" class="btn btn-primary">Quiero acceso anticipado →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBSTACK / NEWSLETTER -->
+  <section id="articulos">
+    <div class="container">
+      <div class="substack-inner">
+        <div>
+          <p class="section-label">Artículos</p>
+          <h2 class="section-title">La ciencia que no cabe en el episodio.</h2>
+
+          <div class="substack-features">
+            <div class="feature-item">
+              <span class="feature-icon">📖</span>
+              <div class="feature-text">
+                <strong>Análisis y contexto</strong>
+                <span>La ciencia detrás de los temas que más importan, con profundidad real.</span>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon">🧬</span>
+              <div class="feature-text">
+                <strong>Ciencia en profundidad</strong>
+                <span>Los estudios más importantes del episodio, analizados sin prisa.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="substack-cta-box">
+          <h3 style="font-size: 24px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 16px;">Lee Brainfulness en Substack</h3>
+          <p>Artículos en profundidad, fragmentos del libro y ciencia sin filtros.</p>
+          <a href="https://substack.com/@brainfulness" target="_blank" class="btn btn-primary" style="width:100%; justify-content:center; font-size:16px; padding:16px 24px; margin-top: 8px;">
+            Leer en Substack →
+          </a>
+          <p style="font-size:12px; color:var(--gray-500); margin-top:16px; text-align:center;">Sin spam · cancela cuando quieras</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIENDA (oculta hasta que esté lista) -->
+  <section id="tienda" style="display:none;">
+    <div class="container">
+      <p class="section-label">Tienda</p>
+      <h2 class="section-title">Para quienes<br/>viven en modo Brainfulness.</h2>
+      <p class="section-sub">Para quienes entienden que el bienestar no es una meta, es una forma de vivir.</p>
+
+      <div class="tienda-categorias">
+
+        <div class="tienda-cat">
+          <div class="tienda-cat-icon">
+            <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
+              <!-- sombra sutil -->
+              <ellipse cx="50" cy="92" rx="28" ry="4" fill="rgba(0,0,0,0.1)"/>
+              <!-- tapa de la caja -->
+              <path d="M18 42 L50 30 L82 42 L50 54 Z" fill="#c8956c" stroke="#a06840" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- frente de la caja -->
+              <path d="M18 42 L18 72 L50 84 L50 54 Z" fill="#e8b48a" stroke="#a06840" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- lado derecho -->
+              <path d="M82 42 L82 72 L50 84 L50 54 Z" fill="#d4956a" stroke="#a06840" stroke-width="1.5" stroke-linejoin="round"/>
+              <!-- veta madera frente -->
+              <line x1="22" y1="55" x2="48" y2="65" stroke="#c8956c" stroke-width="0.8" opacity="0.5"/>
+              <line x1="22" y1="62" x2="48" y2="72" stroke="#c8956c" stroke-width="0.8" opacity="0.5"/>
+              <!-- texto BFN en la tapa -->
+              <text x="50" y="45" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="700" fill="white" letter-spacing="1" opacity="0.9">BFN</text>
+              <!-- franja gradiente en tapa -->
+              <path d="M28 47 L50 38 L72 47 L50 56 Z" fill="url(#boxGrad)" opacity="0.3"/>
+              <defs>
+                <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#4f8ef7"/>
+                  <stop offset="50%" stop-color="#c850c0"/>
+                  <stop offset="100%" stop-color="#7b5ea7"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <h3 class="tienda-cat-title">Para los que se equipan</h3>
+          <p class="tienda-cat-desc">Kits de optimización de salud curados con rigor científico por Lady y Juan. Cada cajita reúne lo que realmente funciona para mejorar tu salud física y cerebral.</p>
+          <span class="tienda-cat-badge">Próximamente</span>
+        </div>
+
+        <div class="tienda-cat">
+          <div class="tienda-cat-icon">⌚</div>
+          <h3 class="tienda-cat-title">Para los que miden</h3>
+          <p class="tienda-cat-desc">Wearables y dispositivos seleccionados con criterio médico. Solo lo que usamos y recomendamos nosotros mismos — porque lo que no se mide no se puede mejorar.</p>
+          <span class="tienda-cat-badge">Próximamente</span>
+        </div>
+
+        <div class="tienda-cat">
+          <div class="tienda-cat-icon">🌙</div>
+          <h3 class="tienda-cat-title">Para los que optimizan</h3>
+          <p class="tienda-cat-desc">Protocolos, rutinas y herramientas curadas por Lady y Juan para mejorar el sueño, el estrés y el rendimiento desde la ciencia.</p>
+          <span class="tienda-cat-badge">Próximamente</span>
+        </div>
+
+        <div class="tienda-cat">
+          <div class="tienda-cat-icon">🧠</div>
+          <h3 class="tienda-cat-title">Para los que aprenden</h3>
+          <p class="tienda-cat-desc">Libros, guías y recursos educativos para quienes quieren ir más allá del episodio. Conocimiento que se queda.</p>
+          <span class="tienda-cat-badge">Próximamente</span>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 56px; text-align:center;">
+        <p style="color:rgba(255,255,255,0.35); font-size:14px; margin-bottom: 20px;">Suscríbete al newsletter para ser el primero en acceder.</p>
+        <a href="#articulos" class="btn btn-white">Avisarme cuando abra →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL BAR -->
+  <div class="social-bar">
+    <div class="social-bar-inner">
+      <span class="social-bar-label">Síguenos</span>
+      <div class="social-links">
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/@brainfulness" target="_blank" class="social-link" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/brainfulness.life/" target="_blank" class="social-link" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+
+        <!-- Substack -->
+        <!-- Spotify -->
+        <a href="https://open.spotify.com/show/0WYfp9qzi5o4Ssf7PoD3We" target="_blank" class="social-link social-link--spotify" aria-label="Spotify">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        </a>
+
+        <a href="https://substack.com/@brainfulness" target="_blank" class="social-link social-link--substack" aria-label="Substack">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong style="font-size: 18px; font-weight: 700;">Brainfulness</strong>
+        <p>Dos médicos comprometidos con llevar la ciencia del cerebro a la vida de todos. Rigor científico, lenguaje humano.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#podcast">Podcast</a></li>
+          <li><a href="#conferencias">Conferencias</a></li>
+          <li><a href="#cursos">Cursos</a></li>
+          <li><a href="#articulos">Artículos</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:brainfulnesspodcast@gmail.com">✉️ brainfulnesspodcast@gmail.com</a></li>
+          <li><a href="https://wa.me/573016601930" target="_blank">💬 WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Brainfulness. Todos los derechos reservados.</p>
+      <p>El contenido es educativo y no reemplaza el consejo médico profesional.</p>
+    </div>
+  </footer>
+
+  <script>
+    // YOUTUBE API — últimos episodios (canal completo, sin Shorts)
+    const YT_KEY = 'AIzaSyBFtGotFObY4xMDZP7DpOSZMvCgUPG4TqI';
+    const YT_CHANNEL = 'UCcfbOA_OaFR2GKaGiNBLTkA'; // @brainfulness channel ID
+
+    async function loadLatestEpisodes() {
+      const grid = document.getElementById('videosGrid');
+      try {
+        // Traer más videos para poder filtrar Shorts después
+        const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${YT_CHANNEL}&maxResults=10&order=date&type=video&videoDuration=medium&key=${YT_KEY}`;
+        const searchRes = await fetch(searchUrl);
+        const searchData = await searchRes.json();
+
+        if (!searchData.items || searchData.items.length === 0) throw new Error('sin resultados');
+
+        // Tomar solo los primeros 3
+        const videos = searchData.items.slice(0, 3);
+
+        grid.innerHTML = videos.map(item => {
+          const videoId = item.id.videoId;
+          return `<div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/${videoId}?enablejsapi=1"
+              title="${item.snippet.title}"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>`;
+        }).join('');
+
+      } catch(e) {
+        // fallback a videos fijos si falla la API
+        grid.innerHTML = `
+          <div class="video-wrap"><iframe src="https://www.youtube.com/embed/rXRCKDqBnkg?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
+          <div class="video-wrap"><iframe src="https://www.youtube.com/embed/Xav-KE8WZFQ?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>
+          <div class="video-wrap"><iframe src="https://www.youtube.com/embed/qDbUudNQyM4?enablejsapi=1" frameborder="0" allowfullscreen></iframe></div>`;
+      }
+    }
+
+    loadLatestEpisodes();
+
+    // Pausar otros videos cuando uno recibe clic
+    document.addEventListener('click', function(e) {
+      const clicked = e.target.closest('.video-wrap');
+      if (!clicked) return;
+      document.querySelectorAll('.video-wrap iframe').forEach(function(iframe) {
+        if (iframe.closest('.video-wrap') !== clicked) {
+          const src = iframe.src;
+          iframe.src = '';
+          iframe.src = src;
+        }
+      });
+    });
+
+    // NEWSLETTER SUBSTACK
+    function handleSubSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('subEmail').value;
+      document.getElementById('subForm').style.display = 'none';
+      document.getElementById('subSuccess').style.display = 'block';
+      setTimeout(() => {
+        window.open(`https://brainfulness.substack.com/subscribe?email=${encodeURIComponent(email)}`, '_blank');
+      }, 1200);
+    }
+
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.style.display = 'none';
+            document.getElementById('formSuccess').style.display = 'block';
+          }
+        } catch(err) {
+          alert('Error al enviar. Por favor escríbenos a brainfulnesspodcast@gmail.com');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
