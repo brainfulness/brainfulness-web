@@ -407,32 +407,43 @@
       margin-top: 20px;
       padding-top: 20px;
       border-top: 1px solid var(--gray-100);
+      overflow: hidden;
+    }
+    .credenciales-wrap::before,
+    .credenciales-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 48px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .credenciales-wrap::before { left: 0;  background: linear-gradient(to right, var(--white), transparent); }
+    .credenciales-wrap::after  { right: 0; background: linear-gradient(to left,  var(--white), transparent); }
+
+    @keyframes credMarquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     .credenciales {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      gap: 16px;
-      padding: 8px 4px 16px;
-      scrollbar-width: none;
+      gap: 28px;
+      padding: 8px 0 16px;
+      width: max-content;
       align-items: center;
+      animation: credMarquee 22s linear infinite;
     }
-    .credenciales::-webkit-scrollbar { display: none; }
+    .credenciales:hover { animation-play-state: paused; }
     .cred-logo {
-      height: 110px;
+      height: 72px;
       width: auto;
-      max-width: 200px;
+      max-width: 160px;
       object-fit: contain;
       flex-shrink: 0;
-      scroll-snap-align: start;
-      opacity: 1;
+      opacity: 0.85;
       transition: opacity var(--transition);
     }
-    @media (max-width: 768px) {
-      .cred-logo { height: 80px; max-width: 150px; }
-    }
-    .cred-logo:hover { opacity: 0.75; }
+    .cred-logo:hover { opacity: 1; }
     .cred-arrow {
       position: absolute;
       top: 50%;
@@ -1567,7 +1578,6 @@
             <p class="profile-role">Neuróloga Clínica · Investigadora · Conferencista · Docente</p>
             <p class="profile-bio">Lleva más de una década estudiando el cerebro humano buscando patrones y encontrando soluciones desde adentro. Meticulosa en la evidencia, apasionada por comunicar ideas complejas de manera sencilla y comprensible.</p>
             <div class="credenciales-wrap">
-              <button class="cred-arrow cred-arrow-left" onclick="document.getElementById('credLady').scrollBy({left:-200,behavior:'smooth'})">&#8592;</button>
               <div class="credenciales" id="credLady">
                 <img src="assets/credenciales/lady/javeriana.png"    alt="Javeriana"              class="cred-logo">
                 <img src="assets/credenciales/lady/udea_lady.png"    alt="UdeA"                   class="cred-logo">
@@ -1577,8 +1587,16 @@
                 <img src="assets/credenciales/lady/cleveland.png"    alt="Cleveland Clinic"       class="cred-logo">
                 <img src="assets/credenciales/lady/ilae.png"         alt="ILAE"                   class="cred-logo">
                 <img src="assets/credenciales/lady/venice.png"       alt="Venice International U" class="cred-logo">
+                <!-- duplicados loop infinito -->
+                <img src="assets/credenciales/lady/javeriana.png"    alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/udea_lady.png"    alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/saskatchewan.png" alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/ruh.png"          alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/aes.png"          alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/cleveland.png"    alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/ilae.png"         alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/lady/venice.png"       alt="" class="cred-logo" aria-hidden="true">
               </div>
-              <button class="cred-arrow cred-arrow-right" onclick="document.getElementById('credLady').scrollBy({left:200,behavior:'smooth'})">&#8594;</button>
             </div>
           </div>
         </div>
@@ -1595,7 +1613,6 @@
             <p class="profile-role">Cirujano Ortopedista · Editor Profesional · Investigador · Docente</p>
             <p class="profile-bio">Lleva años en el quirófano reparando estructuras y entendiendo que la medicina no es una cirugía: los pacientes y sus estilos de vida deben abordarse integralmente. Hoy construye herramientas tecnológicas para que la ciencia llegue a todos.</p>
             <div class="credenciales-wrap">
-              <button class="cred-arrow cred-arrow-left" onclick="document.getElementById('credJuan').scrollBy({left:-200,behavior:'smooth'})">&#8592;</button>
               <div class="credenciales" id="credJuan">
                 <img src="assets/credenciales/juan/udea.png"     alt="UdeA"      class="cred-logo">
                 <img src="assets/credenciales/juan/baylor.png"   alt="Baylor"    class="cred-logo">
@@ -1605,8 +1622,16 @@
                 <img src="assets/credenciales/juan/nhs.png"      alt="NHS"       class="cred-logo">
                 <img src="assets/credenciales/juan/isha.png"     alt="ISHA"      class="cred-logo">
                 <img src="assets/credenciales/juan/ufv.png"      alt="UFV"       class="cred-logo">
+                <!-- duplicados loop infinito -->
+                <img src="assets/credenciales/juan/udea.png"     alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/baylor.png"   alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/rush.png"     alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/ocm.png"      alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/luzerner.png" alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/nhs.png"      alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/isha.png"     alt="" class="cred-logo" aria-hidden="true">
+                <img src="assets/credenciales/juan/ufv.png"      alt="" class="cred-logo" aria-hidden="true">
               </div>
-              <button class="cred-arrow cred-arrow-right" onclick="document.getElementById('credJuan').scrollBy({left:200,behavior:'smooth'})">&#8594;</button>
             </div>
           </div>
         </div>
