@@ -497,54 +497,70 @@
     }
 
     /* INSTITUCIONES */
+    /* ── LOGOS DESKTOP: carrusel automático (marquee) ── */
+    .logos-marquee-wrap {
+      overflow: hidden;
+      margin-top: 36px;
+      position: relative;
+    }
+    .logos-marquee-wrap::before,
+    .logos-marquee-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .logos-marquee-wrap::before { left: 0;  background: linear-gradient(to right, var(--gray-100), transparent); }
+    .logos-marquee-wrap::after  { right: 0; background: linear-gradient(to left,  var(--gray-100), transparent); }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
     .logos-grid {
       display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      gap: 48px;
-      margin-top: 36px;
-      padding: 16px 8px 24px;
-      scrollbar-width: none;
+      gap: 56px;
+      padding: 16px 0 24px;
+      width: max-content;
+      animation: marquee 28s linear infinite;
     }
-    .logos-grid::-webkit-scrollbar { display: none; }
+    .logos-grid:hover { animation-play-state: paused; }
     .logo-inst {
-      height: 168px;
+      height: 68px;
       width: auto;
-      max-width: 336px;
+      max-width: 160px;
       object-fit: contain;
       flex-shrink: 0;
-      scroll-snap-align: start;
       transition: opacity var(--transition);
-      opacity: 0.85;
-    }
-    .logo-inst.logo-wide {
-      height: 78px;
-      max-width: 286px;
+      opacity: 0.75;
     }
     .logo-inst:hover { opacity: 1; }
+    .logo-arrow { display: none; }
 
-    .logo-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--white);
-      border: 1px solid rgba(0,0,0,0.1);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      font-size: 18px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      transition: box-shadow var(--transition), background var(--transition);
-      z-index: 2;
+    /* ── LOGOS MOBILE: grid visible completo ── */
+    @media (max-width: 768px) {
+      .logos-marquee-wrap { overflow: visible; }
+      .logos-marquee-wrap::before,
+      .logos-marquee-wrap::after { display: none; }
+      .logos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 16px;
+        width: 100%;
+        animation: none;
+        padding: 16px 0 8px;
+        align-items: center;
+        justify-items: center;
+      }
+      .logos-grid .logo-clone { display: none; }
+      .logo-inst {
+        height: 52px;
+        max-width: 110px;
+        opacity: 0.80;
+      }
     }
-    .logo-arrow:hover { background: var(--gray-100); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
-    .logo-arrow-left  { left: 8px; }
-    .logo-arrow-right { right: 8px; }
 
     /* HERO MÉTRICAS */
     .hero-metricas {
@@ -1422,7 +1438,7 @@
       /* Testimonios mobile — ya es scroll horizontal */
 
       /* Logos instituciones mobile */
-      #instituciones .logo-arrow { display: none; } /* instituciones: swipe natural en mobile */
+      /* logos mobile: grid handled by media query above */
 
       /* Metricas mobile */
       .metricas-grid { gap: 24px; flex-wrap: wrap; justify-content: center; }
@@ -1712,20 +1728,32 @@
   <section id="instituciones" style="background: var(--gray-100); padding: 56px 24px; position: relative;">
     <div class="container">
       <p class="section-label" style="text-align:center;">Han confiado en nosotros</p>
-      <div class="logos-grid" id="logosGrid">
-        <img src="assets/logos/medellin.png"   alt="Alcaldía de Medellín"     class="logo-inst">
-        <img src="assets/logos/udea.png"       alt="Universidad de Antioquia" class="logo-inst">
-        <img src="assets/logos/ces.png"        alt="Universidad CES"          class="logo-inst">
-        <img src="assets/logos/televid.png"    alt="Televid"                  class="logo-inst">
-        <img src="assets/logos/venecia.png"    alt="Gobierno de Venecia"      class="logo-inst">
-        <img src="assets/logos/biuman.png"     alt="Biuman"                   class="logo-inst">
-        <img src="assets/logos/blood.png"      alt="Blood Dance Company"      class="logo-inst">
-        <img src="assets/logos/fla.png"        alt="Fábrica de Licores"       class="logo-inst">
-        <img src="assets/logos/theodoro.png"   alt="Colegio Theodoro Hertzl"  class="logo-inst">
-        <img src="assets/logos/comunife.png"   alt="Comunife"                 class="logo-inst">
+      <div class="logos-marquee-wrap">
+        <div class="logos-grid" id="logosGrid">
+          <!-- logos originales -->
+          <img src="assets/logos/medellin.png"   alt="Alcaldía de Medellín"     class="logo-inst">
+          <img src="assets/logos/udea.png"       alt="Universidad de Antioquia" class="logo-inst">
+          <img src="assets/logos/ces.png"        alt="Universidad CES"          class="logo-inst">
+          <img src="assets/logos/televid.png"    alt="Televid"                  class="logo-inst">
+          <img src="assets/logos/venecia.png"    alt="Gobierno de Venecia"      class="logo-inst">
+          <img src="assets/logos/biuman.png"     alt="Biuman"                   class="logo-inst">
+          <img src="assets/logos/blood.png"      alt="Blood Dance Company"      class="logo-inst">
+          <img src="assets/logos/fla.png"        alt="Fábrica de Licores"       class="logo-inst">
+          <img src="assets/logos/theodoro.png"   alt="Colegio Theodoro Hertzl"  class="logo-inst">
+          <img src="assets/logos/comunife.png"   alt="Comunife"                 class="logo-inst">
+          <!-- duplicados para loop infinito (solo visible en desktop) -->
+          <img src="assets/logos/medellin.png"   alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/udea.png"       alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/ces.png"        alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/televid.png"    alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/venecia.png"    alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/biuman.png"     alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/blood.png"      alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/fla.png"        alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/theodoro.png"   alt="" class="logo-inst logo-clone" aria-hidden="true">
+          <img src="assets/logos/comunife.png"   alt="" class="logo-inst logo-clone" aria-hidden="true">
+        </div>
       </div>
-      <button class="logo-arrow logo-arrow-left" onclick="document.getElementById('logosGrid').scrollBy({left:-300,behavior:'smooth'})">&#8592;</button>
-      <button class="logo-arrow logo-arrow-right" onclick="document.getElementById('logosGrid').scrollBy({left:300,behavior:'smooth'})">&#8594;</button>
     </div>
   </section>
 
